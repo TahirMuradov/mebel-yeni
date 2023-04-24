@@ -1,0 +1,137 @@
+li{list-style: none; padding: 0; margin: 0;}
+ a{text-decoration: none;}
+ul{padding: 0; margin: 0;}
+
+#header{
+    width: 100%;
+    height: 5vh;
+    position: fixed;
+    z-index: 999;
+    .top-header{
+        z-index: 60;
+       position: relative;
+       border-bottom: 1px solid #848169;
+        ul{
+            li{
+                padding:10px 18px;
+            }
+
+        }
+        .USD{
+            position: absolute;
+            top: 100%;
+            right: 220px;
+            background-color: #f8c704;
+            font-size: 14px;
+            font-weight: bold;
+            width: 85px;
+            border-bottom: 5px solid black;
+            color: #fff;
+            ul{li{padding:10px 15px; &:hover{color: #000;}}}
+            display: none;
+
+        }
+        li.a:hover{.USD{display: block;}}
+        li.b{
+         .USD{right: 130px !important;}   
+         &:hover{.USD{display: block;}}
+        }
+
+        .store{
+            padding: 1px 5px;
+            font-size: 10px;
+            position: absolute;
+            right: 10px;
+            border-radius: 50%;
+            background-color: red;
+            color: #fff;
+        }
+    }
+
+    .bottom-header{
+        z-index: 999;
+      position: relative;
+      a{color: #000;}
+        ul{
+            .hover{
+                &::after{
+                    content: ' ';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: 0;
+                    height: 4px;
+                    background-color: #f8c704;
+                    transition: .5s ease-in;
+                }
+                &::before{
+                    content: ' ';
+                    position: absolute;
+                    bottom: 0;
+                    right: 50%;
+                    width: 0;
+                    height: 4px;
+                    background-color: #f8c704;
+                    transition: .5s ease-in;
+                }
+                &:hover+::after{
+                   width: 50%;
+                   
+                }
+                &:hover+::before{
+                    width: 50%;
+                    
+                 }
+            }
+            li{
+                .page{
+                    &:hover+.pages-sec{
+                           
+                            opacity: 2;
+                            visibility: visible !important;
+                           
+                        
+                    }
+                }
+                .pages-sec{
+                   
+                    width: 100%;
+                    
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                   opacity: 0;
+                   visibility: hidden;
+                   transition: .5s ease-in-out;
+                    color: #fff;
+                    &:hover{opacity: 2; visibility: visible;}
+                 .boxes{
+                   
+                    width: 100%;
+                    height: 50vh !important;
+                     .box1{
+                              background-color: rgba(41, 40, 40, 0.831);
+                              height: 100%;
+                            
+                     }
+                     .box2{
+                         background-color: #f8c704;
+                         ul{
+                             li{
+                                 padding: 2px 0;
+                                 font-weight: 600;
+                                 &:hover{
+                                     color: #000;
+                                 }
+                             }
+                         }
+                     }
+
+                 }       
+
+
+                }
+            }
+        }
+    }
+}
